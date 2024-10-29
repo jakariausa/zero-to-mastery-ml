@@ -21,3 +21,7 @@ def get_chat_response(system_prompt, user_prompt):
 def check_for_dynamic_objects(param):
     # Updated content here
     print("Hello JKR from check_for_dynamic_objects")
+
+    print('This is a new line 1')
+    print('This is a new line 2')
+    return True
