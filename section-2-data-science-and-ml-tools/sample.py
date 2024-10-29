@@ -18,8 +18,6 @@ def get_chat_response(system_prompt, user_prompt):
         print(f'Error: {e}')
         return None
 
-def check_for_dynamic_objects():
-    print('Updated function code executed.')
-if __name__ == '__main__':
-    response = check_for_dynamic_objects()
-    print(response)
+def check_for_dynamic_objects(param):
+    # Updated content here
+    print("Hello JKR from check_for_dynamic_objects")
