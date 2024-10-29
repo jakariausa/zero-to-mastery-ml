@@ -7,12 +7,9 @@ if dotenv_path:
     load_dotenv(dotenv_path)
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
-
 def get_chat_response(system_prompt, user_prompt):
     try:
-        response = openai.ChatCompletion.create(model='gpt-4', messages=[{
-            'role': 'system', 'content': system_prompt}, {'role': 'user',
-            'content': user_prompt}])
+        response = openai.ChatCompletion.create(model='gpt-4', messages=[{'role': 'system', 'content': system_prompt}, {'role': 'user', 'content': user_prompt}])
         return response['choices'][0]['message']['content']
     except openai.error.RateLimitError:
         time.sleep(60)
@@ -21,20 +18,8 @@ def get_chat_response(system_prompt, user_prompt):
         print(f'Error: {e}')
         return None
 
-
 def check_for_dynamic_objects():
-    system_prompt = """
-    You are an AI assistant that retrieves specific information for ETL connectors.
-    """
-    user_prompt = """{
-        "Connector": "Salesforce",
-        "field": "supported and development environments",
-        "description": "the available environments a user can interact with the connector in. If N/A then save PROD",
-        "data_type": "JSON String array"
-    }"""
-    return get_chat_response(system_prompt, user_prompt)
-
-
+    print('Updated function code executed.')
 if __name__ == '__main__':
     response = check_for_dynamic_objects()
     print(response)
