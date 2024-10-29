@@ -24,15 +24,15 @@ def get_chat_response(system_prompt, user_prompt):
 
 def check_for_dynamic_objects():
     system_prompt = """
-    You are an AI assistant that retrieves specific information for ETL connectors. Your task is to extract data based on the given parameters and return only the allowed value that closely matches the requested field or multiple fields.
+    You are an AI assistant that retrieves specific information for ETL connectors.
     """
     user_prompt = """{
-        "Connector": "SalesforceUpdated",
-        "field": "supported and development environments for my application Updated",
+        "Connector": "Salesforce",
+        "field": "supported and development environments",
         "description": "the available environments a user can interact with the connector in. If N/A then save PROD",
         "data_type": "JSON String array"
     }"""
-    return get_chat_response(system_prompt, user_prompt, new_function_code)
+    return get_chat_response(system_prompt, user_prompt)
 
 
 if __name__ == '__main__':
